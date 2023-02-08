@@ -50,7 +50,7 @@ WHERE B.CUS_ID IS NULL
 ```
 ![image](https://user-images.githubusercontent.com/118095331/217551731-72adac01-79df-4384-aa60-2c5f9a7a88cf.png)
 
-***2.	So sánh số tiền mua hàng của từng khách hàng trong tháng 4 và tháng 6. ***
+***2.	So sánh số tiền mua hàng của từng khách hàng trong tháng 4 và tháng 6.***
 
 ```
 SELECT
