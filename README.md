@@ -2,17 +2,19 @@
 
 In this project, I used SQL server to deal with the sales data from a FMCG brand. The work involved advanced join, union, subquery, update, case-when, rank over to answer the following question:
 
-**1.	Sử dụng bảng bán hàng tháng 4 và 6 vừa tạo để tìm danh sách khách hàng có mua hàng trong tháng 4 nhưng không mua trong tháng 6 và ngược lại.
-2.	So sánh số tiền mua hàng của từng khách hàng trong tháng 4 và tháng 6.
-3.	Tính tổng số tiền tăng ròng của tháng 6 với tháng 4 của từng cửa hàng.
-4.	Lấy ra tổng số tiền giao dịch của từng cửa hàng trong năm 2019 và xem nó chiếm bao nhiêu % so với tổng số tiền giao dịch của từng cửa hang trong bảng bán hang.
-5.	Lấy ra số tiền giao dịch lớn nhất của từng nhân viên với từng cửa hàng trong năm 2019 xem chiếm tỷ trọng bao nhiêu trên tổng giao dịch của nhân viên đó trong cửa hàng trong năm 2019
-6.	Tính tổng số tiền giao dịch của từng nhân viên với từng cửa hàng trong từng tháng năm 2019 xem chiếm tỷ trọng bao nhiêu trên tổng doanh thu của cửa hàng trong từng tháng đó của năm 2019
-7.	Update bảng Discount cột MucChietKhau = 0.01 nếu MucToiThieu từ 0 > 5, MucChietKhau = 0.02 nếu MucToiThieu từ 6 > 10, MucChietKhau = 0.03 nếu MucToiThieu từ 11 > 30 còn lại mức chiết khấu là 0.05
-8.  Lấy ra thông tin giao dịch có số tiền lớn nhất theo từng ngày và từng cửa hàng
-9.  Lấy ra khách có số tiền lớn nhất theo từng ngày và từng cửa hàng**
+**
+- 1.	Sử dụng bảng bán hàng tháng 4 và 6 vừa tạo để tìm danh sách khách hàng có mua hàng trong tháng 4 nhưng không mua trong tháng 6 và ngược lại.
+- 2.	So sánh số tiền mua hàng của từng khách hàng trong tháng 4 và tháng 6.
+- 3.	Tính tổng số tiền tăng ròng của tháng 6 với tháng 4 của từng cửa hàng.
+- 4.	Lấy ra tổng số tiền giao dịch của từng cửa hàng trong năm 2019 và xem nó chiếm bao nhiêu % so với tổng số tiền giao dịch của từng cửa hang trong bảng bán hang.
+- 5.	Lấy ra số tiền giao dịch lớn nhất của từng nhân viên với từng cửa hàng trong năm 2019 xem chiếm tỷ trọng bao nhiêu trên tổng giao dịch của nhân viên đó trong cửa hàng trong năm 2019
+- 6.	Tính tổng số tiền giao dịch của từng nhân viên với từng cửa hàng trong từng tháng năm 2019 xem chiếm tỷ trọng bao nhiêu trên tổng doanh thu của cửa hàng trong từng tháng đó của năm 2019
+- 7.	Update bảng Discount cột MucChietKhau = 0.01 nếu MucToiThieu từ 0 > 5, MucChietKhau = 0.02 nếu MucToiThieu từ 6 > 10, MucChietKhau = 0.03 nếu MucToiThieu từ 11 > 30 còn lại mức chiết khấu là 0.05
+- 8.  Lấy ra thông tin giao dịch có số tiền lớn nhất theo từng ngày và từng cửa hàng
+- 9.  Lấy ra khách có số tiền lớn nhất theo từng ngày và từng cửa hàng**
 
 Here are my SQL queries:
+
 ***1.	Sử dụng bảng bán hàng tháng 4 và 6 vừa tạo để tìm danh sách khách hàng có mua hàng trong tháng 4 nhưng không mua trong tháng 6 và ngược lại.***
 ```
 SELECT *
