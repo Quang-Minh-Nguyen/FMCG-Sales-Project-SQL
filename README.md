@@ -3,27 +3,27 @@
 In this project, I used SQL server to deal with the sales data from a FMCG brand. The work involved advanced join, union, subquery, update, case-when, rank over to answer the following question:
 
 
-**- Sử dụng bảng bán hàng tháng 4 và 6 vừa tạo để tìm danh sách khách hàng có mua hàng trong tháng 4 nhưng không mua trong tháng 6 và ngược lại.**
+**- Use the newly created April and June sales table to find a list of customers who bought in April but did not buy in June and vice versa.**
 
-**- So sánh số tiền mua hàng của từng khách hàng trong tháng 4 và tháng 6.**
+**- Compare each customer's purchase amount in April and June.**
 
-**- Tính tổng số tiền tăng ròng của tháng 6 với tháng 4 của từng cửa hàng.**
+**- Calculate the sum of the June and April net gains for each store.**
 
-**- Lấy ra tổng số tiền giao dịch của từng cửa hàng trong năm 2019 và xem nó chiếm bao nhiêu % so với tổng số tiền giao dịch của từng cửa hang trong bảng bán hang.**
+**- Take out the total transaction amount of each store in 2019 and see what percentage it represents compared to the total transaction amount of each store in the sales table.**
 
-**- Lấy ra số tiền giao dịch lớn nhất của từng nhân viên với từng cửa hàng trong năm 2019 xem chiếm tỷ trọng bao nhiêu trên tổng giao dịch của nhân viên đó trong cửa hàng trong năm 2019**
+**- Get the largest transaction amount of each employee with each store in 2019 and see what proportion of the total transaction of that employee in the store in 2019**
 
-**- Tính tổng số tiền giao dịch của từng nhân viên với từng cửa hàng trong từng tháng năm 2019 xem chiếm tỷ trọng bao nhiêu trên tổng doanh thu của cửa hàng trong từng tháng đó của năm 2019**
+**- Calculate the total transaction amount of each employee with each store in each month of 2019 to see what proportion of the store's total revenue in each of those months of 2019.**
 
-**- Update bảng Discount cột MucChietKhau = 0.01 nếu MucToiThieu từ 0 > 5, MucChietKhau = 0.02 nếu MucToiThieu từ 6 > 10, MucChietKhau = 0.03 nếu MucToiThieu từ 11 > 30 còn lại mức chiết khấu là 0.05**
+**- Update table Discount column MucChietKhau = 0.01 if MucToiThieu from 0 > 5, MucChietKhau = 0.02 if MucToiThieu from 6 > 10, MucChietKhau = 0.03 if MucToiThieu from 11 > 30, the remaining discount is 0.05**
 
-**- Lấy ra thông tin giao dịch có số tiền lớn nhất theo từng ngày và từng cửa hàng**
+**- Get the transaction information with the largest amount by day and by store**
 
-**- Lấy ra khách có số tiền lớn nhất theo từng ngày và từng cửa hàng**
+**- Get the customer with the largest amount of money by day and by store**
 
 Here are my SQL queries:
 
-***1.	Sử dụng bảng bán hàng tháng 4 và 6 vừa tạo để tìm danh sách khách hàng có mua hàng trong tháng 4 nhưng không mua trong tháng 6 và ngược lại.***
+***1.	Use the newly created April and June sales table to find a list of customers who bought in April but did not buy in June and vice versa.***
 ```
 SELECT *
 INTO Portfolio..BANHANG_201904
@@ -50,7 +50,7 @@ WHERE B.CUS_ID IS NULL
 ```
 ![image](https://user-images.githubusercontent.com/118095331/217551731-72adac01-79df-4384-aa60-2c5f9a7a88cf.png)
 
-***2.	So sánh số tiền mua hàng của từng khách hàng trong tháng 4 và tháng 6.***
+***2.	Compare each customer's purchase amount in April and June.***
 
 ```
 SELECT
@@ -78,7 +78,7 @@ ON A.CUS_ID = B.CUS_ID
 ```
 ![image](https://user-images.githubusercontent.com/118095331/217551989-9def9b78-3ec6-4485-971f-f7e73e0dc80d.png)
 
-***3.	Tính tổng số tiền tăng ròng của tháng 6 với tháng 4 của từng cửa hàng.***
+***3.	Calculate the sum of the June and April net gains for each store.***
 
 ```
 SELECT
@@ -106,7 +106,7 @@ ON A.STOREDID = B.STOREDID
 ```
 ![image](https://user-images.githubusercontent.com/118095331/217552346-805f9bb6-96d7-44b2-82ad-936ca89c71c4.png)
 
-***4.	Lấy ra tổng số tiền giao dịch của từng cửa hàng trong năm 2019 và xem nó chiếm bao nhiêu % so với tổng số tiền giao dịch của từng cửa hang trong bảng bán hang.***
+***4.	Take out the total transaction amount of each store in 2019 and see what percentage it represents compared to the total transaction amount of each store in the sales table.***
 
 ```
 SELECT 
@@ -135,7 +135,7 @@ ON A.STOREDID = B.STOREDID
 ```
 ![image](https://user-images.githubusercontent.com/118095331/217552555-d1756e40-3829-4ad9-85b8-9c56ad658b29.png)
 
-***5.	Lấy ra số tiền giao dịch lớn nhất của từng nhân viên với từng cửa hàng trong năm 2019 xem chiếm tỷ trọng bao nhiêu trên tổng giao dịch của nhân viên đó trong cửa hàng trong năm 2019***
+***5.	Get the largest transaction amount of each employee with each store in 2019 and see what proportion of the total transaction of that employee in the store in 2019***
 
 ```
 SELECT 
@@ -170,7 +170,7 @@ ON
 ```
 ![image](https://user-images.githubusercontent.com/118095331/217552779-b08e54c2-8405-4c77-b02e-8dba1ec578d5.png)
 
-***6.	Tính tổng số tiền giao dịch của từng nhân viên với từng cửa hàng trong từng tháng năm 2019 xem chiếm tỷ trọng bao nhiêu trên tổng doanh thu của cửa hàng trong từng tháng đó của năm 2019***
+***6.	Calculate the total transaction amount of each employee with each store in each month of 2019 to see what proportion of the store's total revenue in each of those months of 2019.***
 
 ```
 SELECT
@@ -212,7 +212,7 @@ ON
 ```
 ![image](https://user-images.githubusercontent.com/118095331/217553534-f9a7f0df-9f62-4de9-a8a3-9e29925ae51c.png)
 
-***7.	Update bảng Discount cột MucChietKhau = 0.01 nếu MucToiThieu từ 0 > 5, MucChietKhau = 0.02 nếu MucToiThieu từ 6 > 10, MucChietKhau = 0.03 nếu MucToiThieu từ 11 > 30 còn lại mức chiết khấu là 0.05***
+***7.	Update table Discount column MucChietKhau = 0.01 if MucToiThieu from 0 > 5, MucChietKhau = 0.02 if MucToiThieu from 6 > 10, MucChietKhau = 0.03 if MucToiThieu from 11 > 30, the remaining discount is 0.05***
 
 ![image](https://user-images.githubusercontent.com/118095331/217553713-c6097342-4832-424d-bd87-b9b0514316e9.png)
 
@@ -227,7 +227,7 @@ SET MUC_CHIET_KHAU =
 	END
 ```
 
-***8.  Lấy ra thông tin giao dịch có số tiền lớn nhất theo từng ngày và từng cửa hàng***
+***8.  Get the transaction information with the largest amount by day and by store***
 
 ```
 WITH T AS
@@ -249,7 +249,7 @@ ORDER BY CAST(RIGHT(STOREDID,(LEN(STOREDID) - LEN('STORE '))) AS INT), TRANS_DAT
 ```
 ![image](https://user-images.githubusercontent.com/118095331/217555341-547c6dbd-115e-48b7-a6a9-80d88ce1f970.png)
 
-***9.  Lấy ra khách có số tiền lớn nhất theo từng ngày và từng cửa hàng***
+***9.  Get the customer with the largest amount of money by day and by store***
 ```
 WITH T AS 
 (
